@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: openSauseRegular;
+  src: url(../public/font/OpenSauceSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: openSauseSemibold;
+  src: url(../public/font/OpenSauceSans-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: openSauseBold;
+  src: url(../public/font/OpenSauceSans-ExtraBold.ttf);
+}
+
+body{
+  margin: 0;
+  height: 100vh;
+  color: white;
+  background-color: white;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: openSauseRegular;
+}
+
+.heading{
+  font-family: openSauseSemibold;
+}
+
+.top-heading{
+  font-family: openSauseBold;
+}
+
+.video-container{
+  perspective: 1000px;
+}
+
+.box {
+  transform-style: preserve-3d;
+  transform: rotateY(180deg);
+  transition: transform 0.5s;
+}
+
+/* .box:first-child{
+  transform: rotateY(0deg);
+} */
+
+.back {
+  background-color: black;
+  transform: rotateY(180deg);
+} 
+
+.flip{
+  transform: rotateY(0deg);
+}
+
+.front,
+.back {
+  backface-visibility: hidden;
+}
+
+.wrapper-container{
+  width: 913px;
+  overflow: hidden;
+}
+
+.react-player > video{
+  border-radius: 5px;
+}
+
+button{
+  background: rgb(2,0,36);
+  background: linear-gradient(79deg, rgba(2,0,36,1) 0%, rgba(55,91,172,1) 0%, rgba(0,93,204,1) 78%);
+}
+
+@media only screen and (max-width: 1650px) {
+  .wrapper-container{
+    width: 700px;
+  } 
+}
+
+/* @media only screen and (max-width: 672px) {
+  .wrapper-container{
+    width: 400px;
+  } 
+} */
+
+
+@media only screen and (max-width: 1434px) {
+  .hero-section-container{
+    flex-direction: column;
+    align-items: center;
+  } 
+
+  .wrapper-container{
+    width: 100%;
+  } 
+}
+
+
+@media only screen and (max-width: 768px) {
+  .mobile-menu{
+    position: fixed;
+    inset: 0 0 0 30%;
+    background-color: rgba(22,22,22, 0.3);
+    z-index: 70;
+    border-left: 0.5px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(2rem);
+    transform: translateX(100%);
+    transition: transform 350ms ease-in;
+  }
+
+  .mobile-menu[data-visible="true"]{
+    transform: translateX(0%);
+  }
+}
+
+.editing-title{
+  background-color: red;
+  background-image: linear-gradient(45deg, #4285f4, #d96570);
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
